@@ -1,0 +1,23 @@
+.search-results-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  list-style: none;
+  justify-content: center;
+}
+
+.result {
+  background-color: var(--black3);
+  width: fit-content;
+  margin: 1rem;
+  justify-content: center;
+}
+
+.result a {
+  justify-content: center;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  border-radius: 0;
+  text-overflow: ellipsis;
+}

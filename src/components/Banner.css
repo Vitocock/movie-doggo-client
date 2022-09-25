@@ -1,0 +1,15 @@
+.banner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center ;
+}
+
+.banner-poster {
+  grid-column: 1/2;
+  width: 350px;
+}
+
+.banner-backdrop {
+  grid-column: 2/4;
+  height: 525px;
+}

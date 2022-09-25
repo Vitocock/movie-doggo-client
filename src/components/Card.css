@@ -1,0 +1,21 @@
+.card {
+  margin: 1rem;
+  background-color: var(--black2);
+  border-radius: 10px;
+  text-decoration: none;
+  box-sizing: content-box;
+  cursor: pointer;
+}
+.card img {
+  width: 15rem;
+}
+.card h5 {
+  margin: 0.5rem 0;
+  width: 15rem;
+  height: 1.5rem;
+  font-size: 1rem;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

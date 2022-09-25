@@ -1,0 +1,88 @@
+.content-name {
+  font-size: 2.5rem;
+  text-align: center;
+}
+.content-tagline {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.content-info {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr ; 
+  grid-template-rows: 1fr 1fr 1fr ; 
+  gap: 1rem; 
+  grid-template-areas: 
+    "overview overview vote-average genres "
+    "overview overview casting casting "
+    "overview overview casting casting "; 
+  margin: 0 auto;
+  margin-top: 3rem;
+  width: 85%;
+  height: 30rem;
+}
+
+.overview { 
+  grid-area: overview; 
+  font-size: 1.3rem;
+  text-align: justify;
+  background-color: var(--black1);
+  padding: 1rem;
+  border-radius: 10px;
+  line-height: 1.5rem;
+}
+.overview div {
+  margin-bottom: 1rem;
+}
+.vote-average { 
+  grid-area: vote-average; 
+  background-color: var(--red2);
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.vote-average span {
+  font-size: 2.5rem;
+}
+
+.casting { 
+  grid-area: casting; 
+  display: flex;
+  align-content: center;
+}
+.casting img {
+  width: 9rem;
+}
+.casting h5 {
+  width: 9rem;
+}
+.casting .card {
+  margin: 0.4rem;
+}
+.casting .slider-container {
+  padding: 0.4rem;
+}
+
+.genres {
+  grid-area: genres;
+  display: flex;
+  align-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: var(--black3);
+}
+.genres li {
+  background-color: var(--red2);
+  list-style: none;
+  margin: 0.5rem;
+  padding: 0.3rem;
+  padding-right: 1rem;
+}
+.genres a {
+  text-decoration: none;
+}

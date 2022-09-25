@@ -1,0 +1,44 @@
+.searchbar { 
+  align-content: center;
+  background-color: var(--black2);
+  width: 25%;
+}
+.searchbar form {
+  display: flex;
+}
+.searchbar img {
+  width: 1rem;
+}
+.searchbar button, .searchbar input {
+  background-color: var(--black2);
+  border: none;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+.searchbar button {
+  padding: 0.5rem;
+  padding-right: 0.7rem;
+}
+.searchbar input {
+  flex-grow: 1;
+  font-size: 1rem;
+  margin: 0.3rem;
+  border-right: 2px solid var(--black3)
+}
+
+.nav, .nav a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  font-size: 1rem;
+  text-decoration: none;
+  background-color: var(--black3);
+  justify-content: space-between;
+  padding: 0.2rem 1rem 0.2rem 0.5rem;
+}
+
+.nav div.logo img {
+  width: 24px;
+  margin-right: 1rem;
+}
