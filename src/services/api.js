@@ -2,14 +2,9 @@ const API_KEY = 'c4862ec57819cb41b585c3c99130f45b'
 const BACK_URL = 'http://localhost:1234'
 
 export const getPopular = async ({ mediaType, timeWindow = 'week' }) => {
-  const url = `${BACK_URL}/api/getPopular`
+  const url = `${BACK_URL}/api/getPopular/${mediaType}/${timeWindow}`
   const res = await fetch(url, {
-    method : 'GET', 
-    params : {
-      mediaType,
-      timeWindow,
-    },
-    mode : 'cors'
+    method : 'GET'
   })
   const resData = await res.json()
 
