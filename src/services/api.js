@@ -1,14 +1,11 @@
 const API_KEY = 'c4862ec57819cb41b585c3c99130f45b'
-const BACK_URL = 'http://localhost:1234'
 
 export const getPopular = async ({ mediaType, timeWindow = 'week' }) => {
-  const url = `${BACK_URL}/api/getPopular/${mediaType}/${timeWindow}`
-  const res = await fetch(url, {
-    method : 'GET'
-  })
+  const url = `https://api.themoviedb.org/3/${mediaType}/${timeWindow}?api_key=${API_KEY}`
+  const res = await fetch(url)
   const resData = await res.json()
-
-  return resData 
+  
+  return resData
 }
 
 export const getDetailsById = async ({ mediaType, id }) => {
