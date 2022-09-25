@@ -1,9 +1,10 @@
 const API_KEY = 'c4862ec57819cb41b585c3c99130f45b'
 
 export const getPopular = async ({ mediaType, timeWindow = 'week' }) => {
-  const url = `https://api.themoviedb.org/3/${mediaType}/${timeWindow}?api_key=${API_KEY}`
+  const url = `https://api.themoviedb.org/3/trending/${mediaType}/${timeWindow}?api_key=${API_KEY}`
   const res = await fetch(url)
   const resData = await res.json()
+  console.log(resData)
   
   return resData
 }
