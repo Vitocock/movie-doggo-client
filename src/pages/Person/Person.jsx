@@ -1,12 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useParams, useLocation } from 'react-router-dom'
 
-import PageContainer from '../../components/PageContainer'
-import Banner from '../../components/Banner'
 import Slider from '../../components/Slider'
-import Tag from '../../components/Tag'
 import { createCard } from '../../components/Card'
-import { getDetailsById, getCreditsById } from '../../services/api'
+import { getDetailsById, getCombinedCredits } from '../../services/api'
 import './Person.css'
 
 const resultHook = () => {
@@ -14,13 +11,16 @@ const resultHook = () => {
   const { pathname } = useLocation()
   const mediaType = pathname.split('/')[1]
   const [ results, setResult ] = useState({ })
-  const [ credits, setCredits ] = useState({ })
+  const [ credits, setCredits ] = useState([])
+
+  // Escribir funcion que busque los creditos de un actor en peliculas y programas
+  // https://developers.themoviedb.org/3/people/get-person-movie-credits
 
   useEffect(() => {
     const getDetails = async () => {
       const resResults = await getDetailsById({ mediaType, id })
       setResult(resResults)
-      const resCredits = await getCreditsById({ mediaType, id })
+      const resCredits = await getCombinedCredits({ mediaType, id })
       setCredits(resCredits)
     }
     getDetails()
@@ -31,42 +31,27 @@ const resultHook = () => {
 
 const Person = () => {
   const { results, credits} = resultHook()
-  const { cast } = credits
-  const { poster_path, backdrop_path, title, name, 
-    tagline, vote_average, overview, genres } = results
+  const { profile_path, name, biography } = results
 
   return (
     <>
-    <h1 className='content-name'>{title || name}</h1>
-    <h2 className='content-tagline'>{tagline}</h2>
-    <Banner 
-      poster={poster_path}
-      backdrop={backdrop_path}
-      contentName={title}
-    />
-    <div className='content-info'>
-      <section className='overview'>
+    <h1 className='content-name'>{name}</h1>
+    <div className='person-info'>
+      <div className='profile-pict'>
+        <img src={`https://image.tmdb.org/t/p/original${profile_path}`} alt="" />
+      </div>
+      <section className='biography'>
+        <h3>Biography</h3>
         <div>
-          <h3>Overview</h3>
-          {overview}
-        </div>
-        <div>
-          <h3>Users Reviews: </h3>
-          <ul></ul>
+          {biography}
         </div>
       </section>
-      <section className='vote-average'>
-        Vote Average
-        <span>{parseInt(vote_average) } / 10</span>
-      </section>
-      <ul className='genres'>
-        {genres ? genres.map(({id, name}) => <Tag id={id} key={id}> • {name}</Tag>) : ''}
-      </ul>
-      <div className='casting'>
-        {cast ?           
+      <div className='know-for'>
+        { credits ?        
         <Slider>
-          { cast.splice(0,10).map(person => createCard(person, 'person')) }
-        </Slider> : ''}
+          { credits.splice(0,15).map(content => createCard(content, content.media_type)) }
+        </Slider> : ''
+        }
       </div>
     </div>
     </>

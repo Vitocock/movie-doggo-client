@@ -1,0 +1,49 @@
+.person-info {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "profile-pict profile-pict biography biography biography"
+    "profile-pict profile-pict biography biography biography"
+    "profile-pict profile-pict know-for know-for know-for"
+    "profile-pict profile-pict . . ."; 
+
+  height: 51rem;
+  background-color: var(--black3);
+  padding: 2rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+
+.profile-pict { 
+  grid-area: profile-pict; 
+}
+.profile-pict img {
+  width: 34rem;
+}
+
+.biography { 
+  grid-area: biography; 
+  text-align: justify;
+}
+.biography h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+.biography div {
+  line-height: 1.3rem;
+  font-size: 1.1rem;
+}
+
+.know-for { 
+  grid-area: know-for; 
+  margin-top: 28rem;
+}
+.know-for img, .know-for a {
+  width: 10rem;
+  text-overflow: ellipsis;
+}
+.know-for h5 {
+  width: 10rem;
+}

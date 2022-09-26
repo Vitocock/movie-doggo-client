@@ -14,7 +14,7 @@ const resultHook = () => {
   const { pathname } = useLocation()
   const mediaType = pathname.split('/')[1]
   const [ results, setResult ] = useState({ })
-  const [ credits, setCredits ] = useState({ })
+  const [ cast, setCredits ] = useState([])
 
   useEffect(() => {
     const getDetails = async () => {
@@ -26,19 +26,20 @@ const resultHook = () => {
     getDetails()
   }, [id])
 
-  return  {results, credits}         
+  return  {results, cast}         
 }
 
 const Movie = () => {
-  const { results, credits} = resultHook()
-  const { cast } = credits
+  const { results, cast} = resultHook()
   const { poster_path, backdrop_path, title, 
     tagline, vote_average, overview, genres } = results
 
   return (
   <>
-  <h1 className='content-name'>{title}</h1>
-  <h2 className='content-tagline'>{tagline}</h2>
+  <div className='content-name-container'>
+    <h1 className='content-name'>{title}</h1>
+    <h2 className='content-tagline'>{tagline}</h2>
+  </div>
   <Banner 
     poster={poster_path}
     backdrop={backdrop_path}
@@ -65,7 +66,7 @@ const Movie = () => {
     <div className='casting'>
       {cast ?           
       <Slider>
-        { cast.splice(0,10).map(person => createCard(person, 'person')) }
+        { cast.splice(0, 20).map(person => createCard(person, 'person')) }
       </Slider> : ''}
     </div>
   </div>

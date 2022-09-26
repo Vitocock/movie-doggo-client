@@ -1,6 +1,5 @@
 .slider-container { 
   background-color: var(--black1);
-  border-radius: 5px;
   overflow-x: hidden;
   padding: 1rem;
 }

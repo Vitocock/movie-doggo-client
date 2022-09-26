@@ -1,7 +1,6 @@
 .card {
   margin: 1rem;
   background-color: var(--black2);
-  border-radius: 10px;
   text-decoration: none;
   box-sizing: content-box;
   cursor: pointer;
