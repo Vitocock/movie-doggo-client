@@ -1,0 +1,53 @@
+.login-form {
+  padding: 1rem;
+}
+.login-form h3 {
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem 1rem;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem 1rem;
+}
+
+.login-form form input {
+  background-color: var(--black2);
+  margin:auto;
+  width: 70%;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  border: none;
+  margin-bottom: 0.5rem;
+}
+
+.login-form form button {
+  background-color: var(--red2);
+  width: 20%;
+  margin: auto;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+
+.auth-button {
+  background-color: var(--black3);
+  border: none;
+  margin: auto 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.auth-button:hover {
+  transition: all 0.5s ease-in-out;
+  background-color: var(--black2);
+}

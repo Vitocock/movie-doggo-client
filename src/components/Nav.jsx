@@ -1,5 +1,8 @@
 import SearchBar from './SearchBar'
 import logo from '../assets/logo64x64.png'
+import Login from '../pages/Auth/Login/Login'
+import Register from '../pages/Auth/Register/Register'
+
 import './Nav.css'
 
 const Nav = () => {
@@ -16,7 +19,9 @@ const Nav = () => {
       <SearchBar />
 
       <div>
-        login / sign in
+        <Login />
+        
+        <Register />
       </div>
     </nav>
   )

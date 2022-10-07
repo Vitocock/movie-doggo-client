@@ -1,0 +1,32 @@
+.modal-container {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.665);
+  transition: visibility 0s, opacity 0.5s linear;
+  display: inline;
+}
+
+.modal-content {
+  transition: visibility 0s, opacity 0.5s linear;
+  width: 25%;
+  margin: 10% auto;
+  background-color: var(--black3);
+}
+
+.close-modal {
+  float: right;
+}
+.close-modal button {
+  background-color: var(--black3);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
