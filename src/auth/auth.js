@@ -1,4 +1,4 @@
-const BACK_URL = "http://localhost:1234/auth"
+const BACK_URL = "https://cute-dodol-827922.netlify.app/auth"
 
 export const login = async (data) => {
   const authUrl = `${BACK_URL}/login`
